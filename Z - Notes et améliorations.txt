@@ -1,0 +1,11 @@
+Virer le .htm du corpus
+
+Numero, date, titre, rubrique, auteur, url image OK
+
+Par contre :>
+
+contact : garder tout le texte, pas un problème
+legendeImage : on a garder les crédits mais il faut vrm récupérer la légende de l'image
+(le truc au dessus du crédit)
+
+Dans le texte il y a la rubrique, le titre qui gêne le texte donc à virer aussi

@@ -58,6 +58,6 @@ def substituer_tokens(fichier_tokens, fichier_substitution, fichier_sortie):
 # Exemple d'utilisation
 fichier_tokens = "test.txt"  # Fichier contenant les tokens générés par segmente.py
 fichier_substitution = "X5 - substitution.txt"  # Le fichier de substitution généré par generate_substitution.py
-fichier_sortie = "X6 - TokensFiltres"  # Le fichier de sortie contenant les tokens filtrés
+fichier_sortie = "X6 - TokensFiltres.txt"  # Le fichier de sortie contenant les tokens filtrés
 
 substituer_tokens(fichier_tokens, fichier_substitution, fichier_sortie)

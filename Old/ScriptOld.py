@@ -33,14 +33,14 @@ def extraire_infos(fichier_html):
             else:
                 return "Inconnu"
 
-        """ def get_all_text(xpath):
+        def get_all_text(xpath):
             elements = tree.xpath(xpath)
             textes = []
             for e in elements:
                 texte = e.text_content().strip()
                 if texte:
                     textes.append(texte)
-            
+
             if textes:
                 texte_final = "\n".join(textes)
                 texte_final = re.sub(r"http://www\.bulletins-electroniques\.com/actualites/\d+\.htm", "", texte_final).strip() 
@@ -48,12 +48,12 @@ def extraire_infos(fichier_html):
                 
                 return texte_final
             return "Pas de texte"
-        
+
 
         def extraire_contacts(xpath):
             elements = tree.xpath(xpath)
             contacts_textes = []
-            
+
             for e in elements:
                 texte = e.text_content().strip()
                 if texte:
@@ -69,49 +69,9 @@ def extraire_infos(fichier_html):
 
                 contacts_filtres = emails + numeros + sites_web
                 return "\n".join(contacts_filtres).strip() if contacts_filtres else "Pas de contact"
-            
-            return "Pas de contact" """
 
-        def get_all_text(xpath):
-            elements = tree.xpath(xpath)
-            textes = []
-            for e in elements:
-                texte = e.text_content().strip()
-                if texte:
-                    textes.append(texte)
-            
-            if textes:
-                texte_final = "\n".join(textes)
-                
-                # Supprimer la rubrique et le titre s'ils sont au début du texte
-                rubrique = get_text(XPATHS["rubrique"])
-                titre = get_text(XPATHS["titre"])
-
-                if texte_final.startswith(rubrique):
-                    texte_final = texte_final[len(rubrique):].strip()
-                if texte_final.startswith(titre):
-                    texte_final = texte_final[len(titre):].strip()
-
-                # Supprimer les URLs parasites
-                texte_final = re.sub(r"http://www\.bulletins-electroniques\.com/actualites/\d+\.htm", "", texte_final).strip()
-                
-                return texte_final
-            
-            return "Pas de texte"
-
+            return "Pas de contact"
         
-        def extraire_contacts(xpath):
-            elements = tree.xpath(xpath)
-            contacts_textes = []
-    
-            for e in elements:
-                texte = e.text_content().strip()
-                if texte:
-                    contacts_textes.append(texte)
-
-            return "\n".join(contacts_textes).strip() if contacts_textes else "Pas de contact"
-
-
         def get_images():
             images = []
             elements = tree.xpath(XPATHS["images"])

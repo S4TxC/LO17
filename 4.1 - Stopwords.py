@@ -1,6 +1,8 @@
-# seuil = 0.00109               # Valeur Q1 ==> Trop de stopwords
+#### Voir comment on peut adapter les tests statistique pour une meilleure granularité ####
 
-seuil = 0.00109/2.25            # 2.5 ==> 144 SW | 2.3 ==> 164 SW | 2.1 ==> 201 SW | 2.2 ==> 179 SW | 2.25 ==> 168 SW
+# seuil = 0.00109                                       # Valeur Q1 ==> Trop de stopwords
+
+seuil = 0.00109/2.25                                    # 2.5 ==> 144 SW | 2.3 ==> 164 SW | 2.1 ==> 201 SW | 2.2 ==> 179 SW | 2.25 ==> 168 SW
 
 fichier_tf_idf = "X3 - tf_idf.txt"
 fichier_stopwords = "X4 - stopwords.txt"

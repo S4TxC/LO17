@@ -7,8 +7,6 @@ def generer_xml(tokens_file, input_xml, output_xml):
     racine = ET.Element("corpus")
 
     with open(tokens_file, 'r', encoding='utf-8') as f:
-        # Dictionnaire pour stocker les tokens par bulletin (ici on suppose que le bulletin_num est l'identifiant du bulletin)
-        # Le format attendu est : token\tbulletin_num
         tokens_par_bulletin = {}
 
         for ligne in f:
@@ -62,8 +60,8 @@ def generer_xml(tokens_file, input_xml, output_xml):
     tree = ET.ElementTree(racine)
     tree.write(output_xml, encoding="utf-8", xml_declaration=True)
 
-tokens_file = "X7 - Tokens_nettoyes_XML.txt"  # Le fichier de tokens nettoyés
-input_xml = "corpus_nettoye.xml"  # Le fichier XML d'entrée avec toutes les informations supplémentaires
-output_xml = "corpus_nettoye_definitif.xml"  # Le fichier XML à générer avec les informations complètes
+tokens_file = "X7 - Tokens_nettoyes_XML.txt"                                                    # Le fichier de tokens nettoyés
+input_xml = "corpus_nettoye.xml"                                                                # Le fichier XML d'entrée avec toutes les informations supplémentaires
+output_xml = "corpus_nettoye_definitif.xml"                                                     # Le fichier XML à générer avec les informations complètes
 
 generer_xml(tokens_file, input_xml, output_xml)

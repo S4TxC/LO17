@@ -1,11 +1,44 @@
-Virer le .htm du corpus
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
 
-Numero, date, titre, rubrique, auteur, url image OK
+Corrections à apporter, constatées lors du TD N°3 :
 
-Par contre :>
+Virer le .htm du corpus                                                 OK
 
-contact : garder tout le texte, pas un problème
-legendeImage : on a garder les crédits mais il faut vrm récupérer la légende de l'image
-(le truc au dessus du crédit)
+Numero, date, titre, rubrique, auteur, url image                        OK
 
-Dans le texte il y a la rubrique, le titre qui gêne le texte donc à virer aussi
+Par contre :
+
+ - contact : garder tout le texte, pas un problème                      OK
+ - legendeImage : on a garder les crédits mais il faut vraiment 
+    récupérer la légende de l'image et pas les crédits                  OK
+
+ - Dans le texte il y a la rubrique et le titre qui apparaissent dans le texte 
+    alors qu'ils ne devraient pas y être, donc à virer aussi.           OK
+
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+
+Corrections à apporter, constatées lors du TD N°4 :
+
+ - Retravailler la segmentation car on se retrouve avec des lettres seules dans le corpus
+    OK
+
+ - Notamment il faut faire en sorte de laisser groupés toutes (ou presque) les compositions  
+        Ex : m'   s'   l'   t'   c'         etc
+    OK
+
+ - Ne pas oublier d'intégrer de nouveau les images (urls) et les légendes associées dans
+    le fichier corpus_nettoye_definitif.xml
+    OK
+
+ - Trouver un vrai moyen de déterminer une valeur de bon seuil pour l'antidictionnaire
+    La valeur trouvée actuellement est faite à tâtons. Piste => Explorer d'autres
+    statistiques et/ou se renseigner sur quel(s) test(s) sont les plus adaptés à la 
+    détermination de stopwords
+
+ - Finir le TD4
+
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/
+

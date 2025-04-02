@@ -1,8 +1,15 @@
+##################################################################################################################################################
+
+############################### Fichier pour faire des statistiques et déterminer un seuil pour l'antidictionnaire ###############################
+
+##################################################################################################################################################
+
+
 import numpy as np
 import matplotlib.pyplot as plt
 
 
-fichier_tf_idf = "X3 - tf_idf.txt"
+fichier_tf_idf = "tf_idf2.txt"                                  #"X3 - tf_idf.txt"
 tfidf_values = []
 
 with open(fichier_tf_idf, "r", encoding="utf-8") as f:
@@ -19,6 +26,7 @@ mediane = np.median(tfidf_values)
 q1 = np.percentile(tfidf_values, 25)                            # Premier quartile (Q1)
 q3 = np.percentile(tfidf_values, 75)                            # Troisième quartile (Q3)
 ecart_type = np.std(tfidf_values)
+# normale = np.random.normal(moyenne, ecart_type, 1000) 
 
 
 print(f"Moyenne TF-IDF: {moyenne:.5f}")

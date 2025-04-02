@@ -1,3 +1,10 @@
+########################################################################################################################
+
+############################### Fichier pour substituer les stopwords après segmentation ###############################
+
+########################################################################################################################
+
+
 def charger_substitution(fichier_substitution):
     substitutions = {}
     with open(fichier_substitution, 'r', encoding='utf-8') as f:
@@ -20,8 +27,8 @@ def substituer_tokens(fichier_tokens, fichier_substitution, fichier_sortie):
                 sortie.write(f"{token}\t{bulletin_num}\n")                      # Si le mot n'est pas un stopword, on garde le token
 
 
-fichier_tokens = "X0 - segmente.txt"                                            # Fichier contenant les tokens générés par segmente.py
-fichier_substitution = "X5 - substitution.txt"                                  # Fichier de substitution
-fichier_sortie = "X6 - TokensFiltres.txt"                                       # Fichier de sortie avec tokens filtrés
+fichier_tokens = "test.txt"         #"X0 - segmente.txt"                                            # Fichier contenant les tokens générés par segmente.py
+fichier_substitution = "sub2.txt"   #"X5 - substitution.txt"                                  # Fichier de substitution
+fichier_sortie = "Token2.txt"       #"X6 - TokensFiltres.txt"                                       # Fichier de sortie avec tokens filtrés
 
 substituer_tokens(fichier_tokens, fichier_substitution, fichier_sortie)

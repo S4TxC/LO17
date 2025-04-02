@@ -1,3 +1,10 @@
+################################################################################################################
+
+############################### Fichier pour segmenter tous les termes du corpus ###############################
+
+################################################################################################################
+
+
 import xml.etree.ElementTree as ET
 import re
 import sys
@@ -20,7 +27,7 @@ def segmenter_fichier_xml(fichier_xml, fichier_sortie):
             for contenu in [titre, texte]:
                 if contenu:
                     # Nettoyer et découper en tokens
-                    tokens = re.findall(r'\b\w+\b', contenu.lower())                    # Revoir l'expression ici pour faire une meilleure découpe
+                    tokens = re.findall(r"\b[\w'-]+\b", contenu.lower())                    # Revoir l'expression ici pour faire une meilleure découpe
                     for token in tokens:
                         sortie.write(f"{token}\t{fichier_nom}\n")
 

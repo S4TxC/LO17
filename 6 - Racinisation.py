@@ -18,13 +18,10 @@ def analyze_xml_snowball(file_path):
     stemming = {}
 
     for article in root.findall('bulletin'):
-        title = article.find('titre').text if article.find('titre') is not None else ""
         tokenize = article.find('tokenisation').text if article.find('tokenisation') is not None else ""
 
-        title_stems = get_stems_from_text(title)
         tokenize_stems = get_stems_from_text(tokenize)
 
-        stemming.update(title_stems)
         stemming.update(tokenize_stems)
 
     with open("StemmingSnowball.txt", "w", encoding="utf-8") as f:

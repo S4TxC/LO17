@@ -27,14 +27,11 @@ def analyze_xml(file_path):
     lemmatisation = {}
 
     for article in root.findall('bulletin'):
-        title = article.find('titre').text if article.find('titre') is not None else ""
         tokenize = article.find('tokenisation').text if article.find('tokenisation') is not None else ""
-        
-        title_lemmas = get_lemmas_from_text(title)
+
         tokenize_lemmas = get_lemmas_from_text(tokenize)
         
         # Ajouter les lemmes au dictionnaire global
-        lemmatisation.update(title_lemmas)
         lemmatisation.update(tokenize_lemmas)
 
     with open("LemmatisationSpaCy.txt", "w", encoding="utf-8") as f:

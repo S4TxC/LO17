@@ -50,7 +50,7 @@ def lemmatiser_phrase(phrase, lexique):
 # === Programme principal ===
 import os
 
-lexique = charger_lexique("lexique.txt")
+lexique = charger_lexique("LemmatisationSpaCy.txt")
 phrase = input("Entrez une phrase : ")
 lemmes = lemmatiser_phrase(phrase, lexique)
 

@@ -8,7 +8,7 @@
 import math
 from collections import Counter, defaultdict
 
-fichier_tokens = "test.txt"
+fichier_tokens = "test2.txt"
 fichier_tf = "tf2.txt"                                              #"X1 - tf.txt"
 fichier_idf = "idf2.txt"                                            #"X2 - idf.txt"
 fichier_tf_idf = "tf_idf2.txt"                                      #"X3 - tf_idf.txt"

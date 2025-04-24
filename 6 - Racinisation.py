@@ -28,4 +28,4 @@ def analyze_xml_snowball(file_path):
         for word, stem in stemming.items():
             f.write(f"{word}\t{stem}\n")
 
-analyze_xml_snowball('corpus_nettoye_definitif.xml')
+analyze_xml_snowball('corpus2.xml')

@@ -13,7 +13,6 @@ ans
 au
 aujourd'hui
 aussi
-autant
 autour
 autre
 aux
@@ -51,7 +50,6 @@ des
 deux
 différentes
 directeur
-dit
 domaine
 donc
 dont
@@ -75,7 +73,6 @@ fait
 fois
 france
 français
-groupe
 grâce
 il
 ils
@@ -101,7 +98,6 @@ mise
 moins
 monde
 même
-n'est
 ne
 niveau
 non
@@ -133,7 +129,6 @@ première
 projet
 projets
 près
-présent
 qu'il
 que
 quelques
@@ -141,8 +136,6 @@ qui
 rappelons
 recherche
 résultats
-s'agit
-s'est
 sa
 sans
 sciences
@@ -157,7 +150,6 @@ son
 sont
 sous
 sur
-technologie
 temps
 tous
 tout
@@ -170,8 +162,6 @@ un
 une
 va
 vient
-voire
-vont
 y
 à
 édition

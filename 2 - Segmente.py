@@ -20,11 +20,12 @@ def segmenter_fichier_xml(fichier_xml, fichier_sortie):
         for bulletin in root.findall("bulletin"):                                       # Parcours de chaque bulletin dans le corpus
 
             fichier_nom = bulletin.find("fichier").text                                 # Extraire le nom du fichier depuis l'élément <fichier>
-            titre = bulletin.find("titre").text
+            #titre = bulletin.find("titre").text
             texte = bulletin.find("texte").text
 
             # Si le titre ou le texte existe, on les découpe en tokens
-            for contenu in [titre, texte]:
+            #for contenu in [titre, texte]:
+            for contenu in [texte]:
                 if contenu:
                     # Nettoyer et découper en tokens
                     tokens = re.findall(r"\b[\w'-]+\b", contenu.lower())                    # Revoir l'expression ici pour faire une meilleure découpe

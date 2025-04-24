@@ -47,12 +47,15 @@ Corrections à apporter, constatées lors du TD N°5 :
 
  - On a toujours le titre qui traine dans la partie tokenisée : il faut changer ça 
  (cf. corrections TD N°3)
+                                                                        OK
 
  - Vérifier alors que les fichiers textes lemmatisation et racinisation ne comportent que
  les éléments tokenisé sans le titre
+                                                                        OK
 
  - Dans le fichier lemme, vérifier à l'aide de statistiques quels sont les termes qui 
  reviennent le plus souvent, on choisira une vingtaine de mots.
+ Généralisation                                                         OK
 
 /*------------------------------------------------------------------------------------*/
 /*------------------------------------------------------------------------------------*/

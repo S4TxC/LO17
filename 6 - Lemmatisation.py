@@ -38,4 +38,4 @@ def analyze_xml(file_path):
         for word, lemma in lemmatisation.items():
             f.write(f"{word}\t{lemma}\n")
 
-analyze_xml('corpus_nettoye_definitif.xml')
+analyze_xml('corpus2.xml')

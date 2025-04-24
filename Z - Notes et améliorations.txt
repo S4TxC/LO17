@@ -22,20 +22,21 @@ Par contre :
 Corrections à apporter, constatées lors du TD N°4 :
 
  - Retravailler la segmentation car on se retrouve avec des lettres seules dans le corpus
-    OK
+                                                                        OK
 
  - Notamment il faut faire en sorte de laisser groupés toutes (ou presque) les compositions  
         Ex : m'   s'   l'   t'   c'         etc
-    OK
+                                                                        OK
 
  - Ne pas oublier d'intégrer de nouveau les images (urls) et les légendes associées dans
     le fichier corpus_nettoye_definitif.xml
-    OK
+                                                                        OK
 
  - Trouver un vrai moyen de déterminer une valeur de bon seuil pour l'antidictionnaire
     La valeur trouvée actuellement est faite à tâtons. Piste => Explorer d'autres
     statistiques et/ou se renseigner sur quel(s) test(s) sont les plus adaptés à la 
     détermination de stopwords
+                                                => faire à la fin si on a du temps
 
  - Finir le TD4
 
@@ -53,3 +54,5 @@ Corrections à apporter, constatées lors du TD N°5 :
  - Dans le fichier lemme, vérifier à l'aide de statistiques quels sont les termes qui 
  reviennent le plus souvent, on choisira une vingtaine de mots.
 
+/*------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------*/

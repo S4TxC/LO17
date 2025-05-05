@@ -59,3 +59,11 @@ Corrections à apporter, constatées lors du TD N°5 :
 
 /*------------------------------------------------------------------------------------*/
 /*------------------------------------------------------------------------------------*/
+
+Corrections à apporter, constatées lors du TD N°6 :
+
+-Problemes lors de l'affichage de mot cles car ils nous affiche des mots 
+inutiles comme "Parlent, que, quelles, etc..."
+
+-Au niveau des dates lors de la recharge precise de celle ils nous 
+prend pas le jour mais seulement le mois et l'année.

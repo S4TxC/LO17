@@ -65,8 +65,7 @@ def extraire_dates(requete):
 
 def extraire_periode(requete, dates):
     requete_norm = requete.lower()
-    if len(dates) >= 2 and ("entre" in requete_norm or "de" in requete_norm and "à" in requete_norm):
-        # Cas : entre X et Y ou de X à Y
+    if len(dates) >= 2 and ("entre" in requete_norm or "de" in requete_norm and "à" in requete_norm):           # Cas : entre X et Y ou de X à Y
         dates_triees = sorted(dates)
         return {"type": "intervalle", "debut": dates_triees[0], "fin": dates_triees[1]}
     
@@ -85,8 +84,7 @@ def extraire_periode(requete, dates):
             return {"type": "avant", "valeur": dates[0]}
     
     elif len(dates) == 1:
-        # Une seule date : on déduit une période simple
-        return {"type": "exacte", "valeur": dates[0]}
+        return {"type": "exacte", "valeur": dates[0]}                                                           # Une seule date : on déduit une période simple
     
     return None
 
@@ -105,7 +103,7 @@ def extraire_rubrique(requete):
         mots_rubrique = rubrique_norm.split()
         
         if all(mot in requete_norm for mot in mots_rubrique):
-            return rubrique  # renvoyer la rubrique avec sa casse et accentuation d'origine
+            return rubrique                                                                                     # Renvoyer la rubrique avec sa casse et accentuation d'origine
     
     return None
 

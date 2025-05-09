@@ -1,6 +1,6 @@
 import difflib
+import os
 
-# Lecture du lexique (dictionnaire : mot -> lemme)
 def charger_lexique(fichier):
     lexique = {}
     with open(fichier, 'r', encoding='utf-8') as f:
@@ -9,7 +9,7 @@ def charger_lexique(fichier):
             lexique[mot.lower()] = lemme.lower()
     return lexique
 
-# Distance de Levenshtein simplifiée (si difflib ne suffit pas)
+# Distance de Levenshtein
 def distance_levenshtein(a, b):
     return difflib.SequenceMatcher(None, a, b).ratio()
 
@@ -18,7 +18,7 @@ def chercher_candidats_par_prefixe(mot, lexique):
     candidats = []
     for lex_mot in lexique:
         prefixe = len(os.path.commonprefix([mot, lex_mot]))
-        if prefixe >= 2:  # Tu peux ajuster ce seuil
+        if prefixe >= 2:                                                                                           # Ajuster ce seuil pour un meilleur affinage
             candidats.append(lex_mot)
     return candidats
 
@@ -27,7 +27,7 @@ def lemmatiser_phrase(phrase, lexique):
     resultats = {}
 
     for mot in mots:
-        mot_clean = ''.join(c for c in mot.lower() if c.isalpha())  # Nettoyer ponctuation
+        mot_clean = ''.join(c for c in mot.lower() if c.isalpha())                                                 # Nettoyer ponctuation
         if not mot_clean:
             continue
 
@@ -40,15 +40,11 @@ def lemmatiser_phrase(phrase, lexique):
             elif len(candidats) == 1:
                 resultats[mot] = lexique[candidats[0]]
             else:
-                # Comparer par Levenshtein
-                meilleur = max(candidats, key=lambda w: distance_levenshtein(mot_clean, w))
+                meilleur = max(candidats, key=lambda w: distance_levenshtein(mot_clean, w))                         # Comparaison par Levenshtein
                 resultats[mot] = lexique[meilleur]
 
     return resultats
 
-
-# === Programme principal ===
-import os
 
 lexique = charger_lexique("LemmatisationSpaCy.txt")
 phrase = input("Entrez une phrase : ")

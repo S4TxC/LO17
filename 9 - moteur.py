@@ -5,7 +5,6 @@ import unicodedata
 import os
 import difflib
 
-# === Correcteur intégré ===
 def charger_lexique(fichier):
     lexique = {}
     with open(fichier, 'r', encoding='utf-8') as f:
@@ -178,7 +177,6 @@ def rechercher_documents(structure_requete, fichier_xml="corpus2.xml"):
         if structure_requete["dates"]:
             if not any(d in date for d in structure_requete["dates"]):
                 correspond = False
-
 
         if correspond:
             titre = bulletin.find('titre').text.strip() if bulletin.find('titre') is not None else "(Sans titre)"

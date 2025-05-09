@@ -26,7 +26,6 @@ mediane = np.median(tfidf_values)
 q1 = np.percentile(tfidf_values, 25)                            # Premier quartile (Q1)
 q3 = np.percentile(tfidf_values, 75)                            # Troisième quartile (Q3)
 ecart_type = np.std(tfidf_values)
-# normale = np.random.normal(moyenne, ecart_type, 1000) 
 
 
 print(f"Moyenne TF-IDF: {moyenne:.5f}")

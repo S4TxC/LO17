@@ -4,7 +4,6 @@
 
 ##############################################################################################
 
-
 import os
 import xml.etree.ElementTree as ET
 from lxml import html
@@ -13,7 +12,6 @@ from datetime import datetime
 
 DOSSIER_BULLETINS = "BULLETINS/"
 DOSSIER_IMAGES = "BULLETINS/IMAGESWEB"
-
 
 # Patterns XPaths pour extraire les infos qu'on veut
 XPATHS = {
@@ -83,7 +81,7 @@ def extraire_infos(fichier_html):
             elements = tree.xpath(XPATHS["images"])
             for img in elements:
                 src = img.get("src", "Inconnu")
-                legende_elements = img.xpath("following-sibling::span/strong/text()") # following-sibling : Pour récupérer directement l'élément suivant suivant le pattern indiqué, ajouter "| following-sibling::span/text()") si on veut récupérer les crédits 
+                legende_elements = img.xpath("following-sibling::span/strong/text()")                       # following-sibling : Pour récupérer directement l'élément suivant suivant le pattern indiqué, ajouter "| following-sibling::span/text()") si on veut récupérer les crédits 
                 if len(legende_elements) > 0:
                     legende = legende_elements[0]
                 else:
@@ -125,7 +123,7 @@ def generer_xml():
 
             if infos is not None:
                 bulletin = ET.SubElement(root, "bulletin")
-                ET.SubElement(bulletin, "fichier").text = re.sub(r"\.html?$", "", fichier) #fichier
+                ET.SubElement(bulletin, "fichier").text = re.sub(r"\.html?$", "", fichier)
                 ET.SubElement(bulletin, "numero").text = infos["numero_bulletin"]
                 ET.SubElement(bulletin, "date").text = infos["date"]
                 ET.SubElement(bulletin, "rubrique").text = infos["rubrique"]
@@ -148,9 +146,9 @@ def nettoyer_texte(texte):
     if texte is None:
         return ""
 
-    texte = re.sub(r'ADIT\s*-\s*', '', texte)  # Supprime "ADIT -"
-    texte = re.sub(r'\s*-?\s*email\s*:\s*\S+@\S+', '', texte)  # Supprime les emails
-    texte = re.sub(r'\bBE France\s*', '', texte)  # Supprime "BE France"
+    texte = re.sub(r'ADIT\s*-\s*', '', texte)                                   # Supprime "ADIT -"
+    texte = re.sub(r'\s*-?\s*email\s*:\s*\S+@\S+', '', texte)                   # Supprime les emails
+    texte = re.sub(r'\bBE France\s*', '', texte)                                # Supprime "BE France"
     return texte.strip()
 
 

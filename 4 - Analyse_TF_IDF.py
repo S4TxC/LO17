@@ -9,7 +9,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-fichier_tf_idf = "tf_idf2.txt"                                  #"X3 - tf_idf.txt"
+fichier_tf_idf = "TxtFiles/tf_idf2.txt"                                  #"TxtFiles/X3 - tf_idf.txt"
 tfidf_values = []
 
 with open(fichier_tf_idf, "r", encoding="utf-8") as f:

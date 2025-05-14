@@ -11,8 +11,8 @@
 
 seuil = 0.0127/23
 
-fichier_tf_idf = "tf_idf2.txt"                          #"X3 - tf_idf.txt"
-fichier_stopwords = "stopwords2.txt"                    #"X4 - stopwords.txt"
+fichier_tf_idf = "TxtFiles/tf_idf2.txt"                          #"TxtFiles/X3 - tf_idf.txt"
+fichier_stopwords = "TxtFiles/stopwords2.txt"                    #"TxtFiles/X4 - stopwords.txt"
 
 stopwords = set()
 

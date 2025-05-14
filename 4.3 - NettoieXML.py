@@ -12,7 +12,7 @@ def nettoyer_fichier_tokens(fichier_entree, fichier_sortie):
             if token != "''":
                 f_out.write(f"{token}\t{bulletin_num}\n")
 
-fichier_entree = "Token2.txt"               #"X6 - TokensFiltres.txt"
-fichier_sortie = "TokenN2.txt"              #"X7 - Tokens_nettoyes_XML.txt"  
+fichier_entree = "TxtFiles/Token2.txt"               #"TxtFiles/X6 - TokensFiltres.txt"
+fichier_sortie = "TxtFiles/TokenN2.txt"              #"TxtFiles/X7 - Tokens_nettoyes_XML.txt"  
 
 nettoyer_fichier_tokens(fichier_entree, fichier_sortie)

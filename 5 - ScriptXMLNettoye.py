@@ -83,8 +83,8 @@ def generer_xml(tokens_file, input_xml, output_xml):
     tree = ET.ElementTree(racine)
     tree.write(output_xml, encoding="utf-8", xml_declaration=True)
 
-tokens_file = "TokenN2.txt"                                 #"X7 - Tokens_nettoyes_XML.txt"                                                    # Le fichier de tokens nettoyés
-input_xml = "corpus_nettoye.xml"                                                                                                               # Le fichier XML d'entrée avec toutes les informations supplémentaires
-output_xml = "corpus2.xml"                                  #"corpus_nettoye_definitif.xml"                                                    # Le fichier XML à générer avec les informations complètes
+tokens_file = "TxtFiles/TokenN2.txt"                                 #"TxtFiles/X7 - Tokens_nettoyes_XML.txt"                                                    # Le fichier de tokens nettoyés
+input_xml = "TxtFiles/corpus_nettoye.xml"                                                                                                               # Le fichier XML d'entrée avec toutes les informations supplémentaires
+output_xml = "TxtFiles/corpus2.xml"                                  #"TxtFiles/corpus_nettoye_definitif.xml"                                                    # Le fichier XML à générer avec les informations complètes
 
 generer_xml(tokens_file, input_xml, output_xml)

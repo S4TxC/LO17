@@ -57,4 +57,4 @@ def stats(file_path_lemma, file_path_stem):
     fig.update_layout(title="Distribution des fréquences des lemmes/racines - Lemmatisation vs Racinisation",bxaxis_title="Fréquence", yaxis_title="Nombre de mots", template="plotly_white")
     fig.show()
 
-stats("LemmatisationSpaCy.txt", "StemmingSnowball.txt")
+stats("TxtFiles/LemmatisationSpaCy.txt", "TxtFiles/StemmingSnowball.txt")

@@ -8,10 +8,10 @@
 import math
 from collections import Counter, defaultdict
 
-fichier_tokens = "test2.txt"
-fichier_tf = "tf2.txt"                                              #"X1 - tf.txt"
-fichier_idf = "idf2.txt"                                            #"X2 - idf.txt"
-fichier_tf_idf = "tf_idf2.txt"                                      #"X3 - tf_idf.txt"
+fichier_tokens = "TxtFiles/test2.txt"
+fichier_tf = "TxtFiles/tf2.txt"                                              #"TxtFiles/X1 - tf.txt"
+fichier_idf = "TxtFiles/idf2.txt"                                            #"TxtFiles/X2 - idf.txt"
+fichier_tf_idf = "TxtFiles/tf_idf2.txt"                                      #"TxtFiles/X3 - tf_idf.txt"
 
 tf_dict = defaultdict(Counter)                                      # {doc: {mot: count}}
 df_dict = Counter()                                                 # nombre de documents contenant ce mot

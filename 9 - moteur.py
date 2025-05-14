@@ -45,7 +45,7 @@ def lemmatiser_phrase(phrase, lexique):
     return resultats
 
 # === Chargement du lexique ===
-LEXIQUE = charger_lexique("LemmatisationSpaCy.txt")
+LEXIQUE = charger_lexique("TxtFiles/LemmatisationSpaCy.txt")
 
 # === Extraction des rubriques depuis XML ===
 def extraire_rubriques_depuis_xml(fichier_xml="corpus2.xml"):

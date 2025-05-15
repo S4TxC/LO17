@@ -10,7 +10,7 @@ import xml.etree.ElementTree as ET
 
 nlp = spacy.load("fr_core_news_sm")                                           # Installer fr_core_news_sm : python -m spacy download fr_core_news_sm
 
-def get_lemmas_from_text(text):
+def extraire_lemmes_texte(text):
     doc = nlp(text)
     lemmas = {}
     for token in doc:
@@ -20,7 +20,7 @@ def get_lemmas_from_text(text):
     return lemmas
 
 
-def analyze_xml(file_path):
+def analyse_xml(file_path):
     tree = ET.parse(file_path)
     root = tree.getroot()
 
@@ -29,13 +29,13 @@ def analyze_xml(file_path):
     for article in root.findall('bulletin'):
         tokenize = article.find('tokenisation').text if article.find('tokenisation') is not None else ""
 
-        tokenize_lemmas = get_lemmas_from_text(tokenize)
+        tokenize_lemmas = extraire_lemmes_texte(tokenize)
         
         # Ajouter les lemmes au dictionnaire global
         lemmatisation.update(tokenize_lemmas)
 
-    with open("LemmatisationSpaCy.txt", "w", encoding="utf-8") as f:
+    with open("TxtFiles/LemmatisationSpaCy.txt", "w", encoding="utf-8") as f:
         for word, lemma in lemmatisation.items():
             f.write(f"{word}\t{lemma}\n")
 
-analyze_xml('corpus2.xml')
+analyse_xml('corpus2.xml')

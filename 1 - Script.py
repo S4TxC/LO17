@@ -31,14 +31,14 @@ def extraire_infos(fichier_html):
         with open(fichier_html, "r", encoding="utf-8") as file:
             tree = html.fromstring(file.read())
 
-        def get_text(xpath):
+        def extraire_texte(xpath):
             element = tree.xpath(xpath)
             if len(element) > 0:
                 return element[0].text_content().strip()
             else:
                 return "Inconnu"
 
-        def get_all_text(xpath):
+        def extraire_tout_texte(xpath):
             elements = tree.xpath(xpath)
             textes = []
             for e in elements:
@@ -49,8 +49,8 @@ def extraire_infos(fichier_html):
             if textes:
                 texte_final = "\n".join(textes)
                 
-                rubrique = get_text(XPATHS["rubrique"])
-                titre = get_text(XPATHS["titre"])
+                rubrique = extraire_texte(XPATHS["rubrique"])
+                titre = extraire_texte(XPATHS["titre"])
 
                 if texte_final.startswith(rubrique):
                     texte_final = texte_final[len(rubrique):].strip()
@@ -76,7 +76,7 @@ def extraire_infos(fichier_html):
             return "\n".join(contacts_textes).strip() if contacts_textes else "Pas de contact"
 
 
-        def get_images():
+        def extraire_images():
             images = []
             elements = tree.xpath(XPATHS["images"])
             for img in elements:
@@ -89,21 +89,21 @@ def extraire_infos(fichier_html):
                 images.append({"url": src, "legende": legende})
             return images
 
-        date_brut = get_text(XPATHS["date"])
+        date_brut = extraire_texte(XPATHS["date"])
         try:
             date_formattee = datetime.strptime(date_brut, "%d/%m/%Y").strftime("%d/%m/%Y")
         except ValueError:
             date_formattee = date_brut
 
         return {
-            "identifiant": get_text(XPATHS["identifiant"]),
-            "numero_bulletin": get_text(XPATHS["numero_bulletin"]),
+            "identifiant": extraire_texte(XPATHS["identifiant"]),
+            "numero_bulletin": extraire_texte(XPATHS["numero_bulletin"]),
             "date": date_formattee,
-            "rubrique": get_text(XPATHS["rubrique"]),
-            "titre": get_text(XPATHS["titre"]),
-            "auteur": get_text(XPATHS["auteur"]),
-            "texte": get_all_text(XPATHS["texte"]),
-            "images": get_images(),
+            "rubrique": extraire_texte(XPATHS["rubrique"]),
+            "titre": extraire_texte(XPATHS["titre"]),
+            "auteur": extraire_texte(XPATHS["auteur"]),
+            "texte": extraire_tout_texte(XPATHS["texte"]),
+            "images": extraire_images(),
             "contacts": extraire_contacts(XPATHS["contacts"])
         }
 

@@ -4,14 +4,14 @@ import xml.etree.ElementTree as ET
 
 stemmer = FrenchStemmer()
 
-def get_stems_from_text(text):
-    words = text.split()  # Séparer les mots
+def extraire_racine_texte(text):
+    mots = text.split()  # Séparer les mots
     stems = {}
-    for word in words:
-        stems[word] = stemmer.stem(word)
+    for mot in mots:
+        stems[mot] = stemmer.stem(mot)
     return stems
 
-def analyze_xml_snowball(file_path):
+def analyse_xml(file_path):
     tree = ET.parse(file_path)
     root = tree.getroot()
 
@@ -20,12 +20,12 @@ def analyze_xml_snowball(file_path):
     for article in root.findall('bulletin'):
         tokenize = article.find('tokenisation').text if article.find('tokenisation') is not None else ""
 
-        tokenize_stems = get_stems_from_text(tokenize)
+        tokenize_stems = extraire_racine_texte(tokenize)
 
         stemming.update(tokenize_stems)
 
-    with open("StemmingSnowball.txt", "w", encoding="utf-8") as f:
+    with open("TxtFiles/StemmingSnowball.txt", "w", encoding="utf-8") as f:
         for word, stem in stemming.items():
             f.write(f"{word}\t{stem}\n")
 
-analyze_xml_snowball('corpus2.xml')
+analyse_xml('corpus2.xml')

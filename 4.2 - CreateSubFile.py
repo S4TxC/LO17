@@ -5,7 +5,7 @@
 ######################################################################################################################################################
 
 
-def generate_substitution_file(fichier_stopwords, fichier_substitution):
+def generer_fichier_substitution(fichier_stopwords, fichier_substitution):
     stopwords = set()
     with open(fichier_stopwords, 'r', encoding='utf-8') as f:
         for line in f:
@@ -19,4 +19,4 @@ def generate_substitution_file(fichier_stopwords, fichier_substitution):
 fichier_stopwords = "TxtFiles/stopwords2.txt"                                            #"TxtFiles/X4 - stopwords.txt"
 fichier_substitution = "TxtFiles/sub2.txt"                                               #"TxtFiles/X5 - substitution.txt"
 
-generate_substitution_file(fichier_stopwords, fichier_substitution)
+generer_fichier_substitution(fichier_stopwords, fichier_substitution)

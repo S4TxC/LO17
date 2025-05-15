@@ -7,11 +7,10 @@ from plotly.subplots import make_subplots
 nlp = spacy.load("fr_core_news_sm")
 
 def stats(file_path_lemma, file_path_stem):
-    # Lecture des lemmes
+
     with open(file_path_lemma, "r", encoding="utf-8") as f:
         lemmes = [line.split()[1] for line in f.readlines()]
-    
-    # Lecture des racines
+        
     with open(file_path_stem, "r", encoding="utf-8") as f:
         stems = [line.split()[1] for line in f.readlines()]
     

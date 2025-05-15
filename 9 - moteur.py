@@ -151,7 +151,7 @@ def rechercher_documents(structure_requete, fichier_xml="corpus2.xml"):
     resultats = []
 
     for bulletin in root.findall('bulletin'):
-        contenu = bulletin.find('texte').text.lower() if bulletin.find('texte') is not None else ""
+        contenu = bulletin.find('tokenisation').text.lower() if bulletin.find('tokenisation') is not None else ""
         rubrique = bulletin.find('rubrique').text.strip() if bulletin.find('rubrique') is not None else ""
         date = bulletin.find('date').text.strip() if bulletin.find('date') is not None else ""
 

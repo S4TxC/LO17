@@ -4,7 +4,6 @@
 
 ######################################################################################################################################
 
-
 import math
 from collections import Counter, defaultdict
 
@@ -23,7 +22,6 @@ with open(fichier_tokens, 'r', encoding='utf-8') as f:
         tf_dict[doc][mot] += 1
         documents.add(doc)
 
-
 # Étape 1 : Calcul du nombre de documents contenant chaque mot
 N = len(documents)
 
@@ -31,11 +29,8 @@ for doc, mots in tf_dict.items():
     for mot in mots:
         df_dict[mot] += 1
 
-
 # Étape 2 : Calcul TF et IDF
-
 idf_dict = {mot: math.log10(N / df_t) for mot, df_t in df_dict.items()}
-
 
 with open(fichier_tf, 'w', encoding='utf-8') as f_tf, \
      open(fichier_idf, 'w', encoding='utf-8') as f_idf, \
@@ -43,7 +38,7 @@ with open(fichier_tf, 'w', encoding='utf-8') as f_tf, \
 
     # Écriture du fichier TF
     for doc, mots in tf_dict.items():
-        total_mots = sum(mots.values())  # Nombre total de mots dans le doc
+        total_mots = sum(mots.values())
         for mot, count in mots.items():
             tf = count / total_mots
             f_tf.write(f"{doc}\t{mot}\t{tf}\n")

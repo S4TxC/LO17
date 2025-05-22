@@ -4,7 +4,6 @@
 
 ########################################################################################################################
 
-
 def charger_substitution(fichier_substitution):
     substitutions = {}
     with open(fichier_substitution, 'r', encoding='utf-8') as f:
@@ -30,5 +29,4 @@ def substituer_tokens(fichier_tokens, fichier_substitution, fichier_sortie):
 fichier_tokens = "TxtFiles/test2.txt"        #"TxtFiles/X0 - segmente.txt"                                            # Fichier contenant les tokens générés par segmente.py
 fichier_substitution = "TxtFiles/sub2.txt"   #"TxtFiles/X5 - substitution.txt"                                        # Fichier de substitution
 fichier_sortie = "TxtFiles/Token2.txt"       #"TxtFiles/X6 - TokensFiltres.txt"                                       # Fichier de sortie avec tokens filtrés
-
 substituer_tokens(fichier_tokens, fichier_substitution, fichier_sortie)

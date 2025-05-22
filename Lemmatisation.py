@@ -4,7 +4,6 @@
 
 ###########################################################################################################
 
-
 import spacy
 import xml.etree.ElementTree as ET
 
@@ -19,19 +18,14 @@ def extraire_lemmes_texte(text):
         lemmas[token.text] = token.lemma_
     return lemmas
 
-
 def analyse_xml(file_path):
     tree = ET.parse(file_path)
     root = tree.getroot()
-
     lemmatisation = {}
 
     for article in root.findall('bulletin'):
         tokenize = article.find('tokenisation').text if article.find('tokenisation') is not None else ""
-
         tokenize_lemmas = extraire_lemmes_texte(tokenize)
-        
-        # Ajouter les lemmes au dictionnaire global
         lemmatisation.update(tokenize_lemmas)
 
     with open("TxtFiles/LemmatisationSpaCy.txt", "w", encoding="utf-8") as f:

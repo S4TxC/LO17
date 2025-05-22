@@ -24,12 +24,10 @@ def segmenter_fichier_xml(fichier_xml, fichier_sortie):
                     for token in tokens:
                         sortie.write(f"{token}\t{fichier_nom}\n")
 
-
 if len(sys.argv) != 3:
     print("Erreur syntaxe, manque arguments suivre syntaxe: python Segmente.py <fichier_xml> <fichier_sortie>")
     sys.exit(1)
 
 fichier_xml = sys.argv[1]
 fichier_sortie = sys.argv[2]
-
 segmenter_fichier_xml(fichier_xml, fichier_sortie)

@@ -3,7 +3,6 @@ import xml.etree.ElementTree as ET
 def generer_index_inverse(input_xml, output_dir):
     tree = ET.parse(input_xml)
     root = tree.getroot()
-
     index_titre = {}
     index_rubrique = {}
     index_date = {}
@@ -13,13 +12,12 @@ def generer_index_inverse(input_xml, output_dir):
 
     for bulletin in root.findall("bulletin"):
         bulletin_num = bulletin.find("fichier").text
-        
         titre = bulletin.find("titre").text if bulletin.find("titre") is not None else ""
         rubrique = bulletin.find("rubrique").text if bulletin.find("rubrique") is not None else ""
         date = bulletin.find("date").text if bulletin.find("date") is not None else ""
         contact = bulletin.find("contact").text if bulletin.find("contact") is not None else ""
-        
         lemmes = bulletin.find("tokenisation").text if bulletin.find("tokenisation") is not None else ""
+
         if lemmes:
             lemmes = lemmes.split()
 
@@ -88,5 +86,4 @@ def generer_index_inverse(input_xml, output_dir):
 
 input_xml = "corpus3.xml"
 output_dir = "index_inverses"
-
 generer_index_inverse(input_xml, output_dir)

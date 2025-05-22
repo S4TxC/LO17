@@ -4,7 +4,6 @@
 
 ##################################################################################################################################################
 
-
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -20,7 +19,7 @@ with open(fichier_tf_idf, "r", encoding="utf-8") as f:
 tfidf_values = np.array(tfidf_values)
 
 
-# Quelques statistiques                                         # Penser à ajouter d'autres statistiques
+# Penser à ajouter d'autres statistiques si on a le temps
 moyenne = np.mean(tfidf_values)
 mediane = np.median(tfidf_values)
 q1 = np.percentile(tfidf_values, 25)                            # Premier quartile (Q1)

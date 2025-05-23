@@ -1,3 +1,5 @@
+                ####### Fichier intermédiaire pour créer l'interface de notre moteur via l'utilisation de gradio #######
+
 import gradio as gr
 import pandas as pd
 import plotly.graph_objects as go
@@ -69,12 +71,7 @@ def evaluation_globale():
         rappels.append(r)
         temps_reponses.append(mesurer_temps_moyen(req))
 
-    df = pd.DataFrame({
-        "Requête": requêtes,
-        "Précision": precisions,
-        "Rappel": rappels,
-        "Temps de réponse (s)": temps_reponses
-    })
+    df = pd.DataFrame({"Requête": requêtes, "Précision": precisions, "Rappel": rappels, "Temps de réponse (s)": temps_reponses})
 
     fig1 = go.Figure()
     fig1.add_trace(go.Scatter(x=requêtes, y=precisions, mode="lines+markers", name="Précision"))

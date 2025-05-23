@@ -1,8 +1,4 @@
-########################################################################################################################
-
-############################### Fichier pour substituer les stopwords après segmentation ###############################
-
-########################################################################################################################
+                ####### Fichier pour substituer les stopwords après segmentation #######
 
 def charger_substitution(fichier_substitution):
     substitutions = {}
@@ -20,13 +16,13 @@ def substituer_tokens(fichier_tokens, fichier_substitution, fichier_sortie):
             token, bulletin_num = ligne.strip().split('\t')
             if token in substitutions:
                 replacement = substitutions[token]                              # Récupérer la substitution
-                if replacement:                                                 # Si remplacement n'est pas une chaîne vide
+                if replacement:
                     sortie.write(f"{replacement}\t{bulletin_num}\n")
             else:
                 sortie.write(f"{token}\t{bulletin_num}\n")                      # Si le mot n'est pas un stopword, on garde le token
 
 
-fichier_tokens = "TxtFiles/test2.txt"        #"TxtFiles/X0 - segmente.txt"                                            # Fichier contenant les tokens générés par segmente.py
-fichier_substitution = "TxtFiles/sub2.txt"   #"TxtFiles/X5 - substitution.txt"                                        # Fichier de substitution
-fichier_sortie = "TxtFiles/Token2.txt"       #"TxtFiles/X6 - TokensFiltres.txt"                                       # Fichier de sortie avec tokens filtrés
+fichier_tokens = "TxtFiles/segmente.txt"                                        # Fichier contenant les tokens générés par segmente.py
+fichier_substitution = "TxtFiles/substitution.txt"                              # Fichier de substitution
+fichier_sortie = "TxtFiles/tokenV1.txt"                                         # Fichier de sortie avec tokens filtrés
 substituer_tokens(fichier_tokens, fichier_substitution, fichier_sortie)

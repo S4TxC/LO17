@@ -1,3 +1,5 @@
+                ####### Fichier pour créer les fichiers de l'index inversé #######
+
 import xml.etree.ElementTree as ET
 
 def generer_index_inverse(input_xml, output_dir):
@@ -84,6 +86,6 @@ def generer_index_inverse(input_xml, output_dir):
     fichier_index_inverse(index_urls, f"{output_dir}/index_images_urls.txt")
     fichier_index_inverse(index_contacts, f"{output_dir}/index_contacts.txt")
 
-input_xml = "corpus3.xml"
+input_xml = "Corpus/corpusV3.xml"
 output_dir = "index_inverses"
 generer_index_inverse(input_xml, output_dir)

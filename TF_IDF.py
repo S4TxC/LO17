@@ -1,20 +1,16 @@
-######################################################################################################################################
-
-############################### Fichier pour associer les coefs tf, idf et tf-idf aux termes du corpus ###############################
-
-######################################################################################################################################
+                ####### Fichier pour associer les coefs tf, idf et tf-idf aux termes du corpus #######
 
 import math
 from collections import Counter, defaultdict
 
-fichier_tokens = "TxtFiles/test2.txt"
-fichier_tf = "TxtFiles/tf2.txt"                                              #"TxtFiles/X1 - tf.txt"
-fichier_idf = "TxtFiles/idf2.txt"                                            #"TxtFiles/X2 - idf.txt"
-fichier_tf_idf = "TxtFiles/tf_idf2.txt"                                      #"TxtFiles/X3 - tf_idf.txt"
+fichier_tokens = "TxtFiles/segmente.txt"
+fichier_tf = "TxtFiles/tf.txt"
+fichier_idf = "TxtFiles/idf.txt"
+fichier_tf_idf = "TxtFiles/tf_idf.txt"
 
-tf_dict = defaultdict(Counter)                                      # {doc: {mot: count}}
-df_dict = Counter()                                                 # nombre de documents contenant ce mot
-documents = set()                                                   # pour compter le nombre total de documents
+tf_dict = defaultdict(Counter)
+df_dict = Counter()
+documents = set()
 
 with open(fichier_tokens, 'r', encoding='utf-8') as f:
     for ligne in f:

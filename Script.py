@@ -1,8 +1,4 @@
-##############################################################################################
-
-############################### Fichier pour générer le corpus ###############################
-
-##############################################################################################
+                ####### Fichier pour générer le corpus #######
 
 import os
 import xml.etree.ElementTree as ET
@@ -139,7 +135,7 @@ def generer_xml():
 
                 ET.SubElement(bulletin, "contact").text = infos["contacts"]
 
-    ET.ElementTree(root).write("corpus.xml", encoding="utf-8", xml_declaration=True)
+    ET.ElementTree(root).write("Corpus/corpusV1.xml", encoding="utf-8", xml_declaration=True)
 
 
 def nettoyer_texte(texte):
@@ -172,4 +168,4 @@ def nettoyer_xml(fichier_entree, fichier_sortie):
 
 if __name__ == "__main__":
     generer_xml()
-    nettoyer_xml("corpus.xml", "corpus_nettoye.xml")
+    nettoyer_xml("Corpus/corpusV1.xml", "Corpus/corpusV2.xml")

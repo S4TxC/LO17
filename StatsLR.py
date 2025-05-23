@@ -1,3 +1,5 @@
+                ####### Fichier de statistiques lemmes vs racines #######
+
 import plotly.graph_objects as go
 from collections import Counter
 import spacy
@@ -36,4 +38,4 @@ def stats(file_path_lemma, file_path_stem):
     fig.update_layout(title="Distribution des fréquences des lemmes/racines - Lemmatisation vs Racinisation", xaxis_title="Fréquence", yaxis_title="Nombre de mots", template="plotly_white")
     fig.show()
 
-stats("TxtFiles/LemmatisationSpaCy.txt", "TxtFiles/RacinisationNLTK.txt")
+stats("TxtFiles/lemmatisationSpaCy.txt", "TxtFiles/racinisationNLTK.txt")

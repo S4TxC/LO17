@@ -1,20 +1,16 @@
-###########################################################################################################
-
-############################### Fichier lemmatisation du corpus avec SpaCy  ###############################
-
-###########################################################################################################
+                ####### Fichier lemmatisation du corpus avec SpaCy #######
 
 import spacy
 import xml.etree.ElementTree as ET
 
-nlp = spacy.load("fr_core_news_sm")                                           # Installer fr_core_news_sm : python -m spacy download fr_core_news_sm
+nlp = spacy.load("fr_core_news_sm")                             # Installer fr_core_news_sm : python -m spacy download fr_core_news_sm
 
 def extraire_lemmes_texte(text):
     doc = nlp(text)
     lemmas = {}
     for token in doc:
         if token.is_stop or token.is_punct:
-            continue                                                          # Ignorer les stop words et la ponctuation
+            continue
         lemmas[token.text] = token.lemma_
     return lemmas
 
@@ -28,8 +24,8 @@ def analyse_xml(file_path):
         tokenize_lemmas = extraire_lemmes_texte(tokenize)
         lemmatisation.update(tokenize_lemmas)
 
-    with open("TxtFiles/LemmatisationSpaCy.txt", "w", encoding="utf-8") as f:
+    with open("TxtFiles/lemmatisationSpaCy.txt", "w", encoding="utf-8") as f:
         for word, lemma in lemmatisation.items():
             f.write(f"{word}\t{lemma}\n")
 
-analyse_xml('corpus2.xml')
+analyse_xml('Corpus/corpusV3.xml')

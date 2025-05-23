@@ -1,3 +1,5 @@
+                ####### Fichier du correcteur orthographique utilisant la distance de levenshtein #######
+
 import Levenshtein
 import os
 import string
@@ -47,7 +49,7 @@ def lemmatiser_phrase(phrase, lexique):
 
     return resultats
 
-lexique = charger_lexique("TxtFiles/LemmatisationSpaCy.txt")
+lexique = charger_lexique("TxtFiles/lemmatisationSpaCy.txt")
 phrase = input("Entrez une phrase : ")
 lemmes = lemmatiser_phrase(phrase, lexique)
 

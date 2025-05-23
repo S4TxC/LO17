@@ -1,14 +1,10 @@
-##################################################################################################################################################
-
-############################### Fichier pour faire des statistiques et déterminer un seuil pour l'antidictionnaire ###############################
-
-##################################################################################################################################################
+                ####### Fichier pour faire des statistiques et déterminer un seuil pour l'antidictionnaire #######
 
 import numpy as np
 import matplotlib.pyplot as plt
 
 
-fichier_tf_idf = "TxtFiles/tf_idf2.txt"                                  #"TxtFiles/X3 - tf_idf.txt"
+fichier_tf_idf = "TxtFiles/tf_idf.txt"
 tfidf_values = []
 
 with open(fichier_tf_idf, "r", encoding="utf-8") as f:
@@ -33,8 +29,6 @@ print(f"1er quartile (Q1): {q1:.5f}")
 print(f"3ème quartile (Q3): {q3:.5f}")
 print(f"Écart-type: {ecart_type:.5f}")
 
-
-# Histogramme
 plt.figure(figsize=(10, 6))
 plt.hist(tfidf_values, bins=50, color='skyblue', edgecolor='red', alpha=0.7)
 plt.axvline(q1, color='yellow', linestyle='dashed', linewidth=1, label="Q1 (25%)")

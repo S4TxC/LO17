@@ -1,8 +1,4 @@
-##########################################################################################################################
-
-############################### Fichier pour ajouter le traitement des stopwords au corpus ###############################
-
-##########################################################################################################################
+                ####### Fichier pour ajouter le traitement des stopwords au corpus #######
 
 import xml.etree.ElementTree as ET
 
@@ -81,7 +77,7 @@ def generer_xml(tokens_file, input_xml, output_xml):
     tree = ET.ElementTree(racine)
     tree.write(output_xml, encoding="utf-8", xml_declaration=True)
 
-tokens_file = "TxtFiles/X7 - Tokens_nettoyes_XML.txt"                #"TxtFiles/TokenN2.txt"                                                    # Le fichier de tokens nettoyés
-input_xml = "corpus_nettoye.xml"                                                                                                               # Le fichier XML d'entrée avec toutes les informations supplémentaires
-output_xml = "corpus3.xml"                                  #"TxtFiles/corpus_nettoye_definitif.xml"                                                    # Le fichier XML à générer avec les informations complètes
+tokens_file = "TxtFiles/tokenV2.txt"                        # Le fichier de tokens nettoyés
+input_xml = "Corpus/corpusV2.xml"                           # Le fichier XML d'entrée avec toutes les informations supplémentaires
+output_xml = "Corpus/corpusV3.xml"                          # Le fichier XML à générer avec les informations complètes
 generer_xml(tokens_file, input_xml, output_xml)

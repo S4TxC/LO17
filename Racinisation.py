@@ -1,8 +1,4 @@
-###########################################################################################################
-
-############################### Fichier racinisation du corpus avec SpaCy  ################################
-
-###########################################################################################################
+                ####### Fichier racinisation du corpus avec SpaCy #######
 
 import nltk
 from nltk.stem.snowball import FrenchStemmer
@@ -27,8 +23,8 @@ def analyse_xml(file_path):
         tokenize_stems = extraire_racine_texte(tokenize)
         stemming.update(tokenize_stems)
 
-    with open("TxtFiles/RacinisationNLTK.txt", "w", encoding="utf-8") as f:
+    with open("TxtFiles/racinisationNLTK.txt", "w", encoding="utf-8") as f:
         for word, stem in stemming.items():
             f.write(f"{word}\t{stem}\n")
 
-analyse_xml('corpus2.xml')
+analyse_xml('Corpus/corpusV3.xml')

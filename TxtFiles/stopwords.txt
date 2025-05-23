@@ -4,6 +4,7 @@
 4
 a
 afin
+agit
 ainsi
 alors
 année
@@ -47,10 +48,13 @@ dernier
 des
 deux
 différentes
+dire
+dit
 domaine
 donc
 dont
 du
+durant
 déjà
 développement
 développer
@@ -75,6 +79,7 @@ grâce
 hui
 il
 ils
+industrie
 institut
 jusqu
 l
@@ -86,6 +91,8 @@ les
 leur
 leurs
 mais
+matière
+mettre
 mieux
 mise
 moins
@@ -114,6 +121,7 @@ permet
 permettre
 personnes
 peut
+peuvent
 place
 plus
 plusieurs
@@ -155,6 +163,7 @@ travail
 travaux
 trois
 très
+type
 un
 une
 université
@@ -162,6 +171,7 @@ va
 vient
 y
 à
+édition
 également
 étant
 été

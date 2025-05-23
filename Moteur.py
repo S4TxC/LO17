@@ -1,10 +1,12 @@
+                ####### Fichier du moteur de recherche #######
+
 import re
 import json
 from collections import defaultdict
 import unicodedata
 import xml.etree.ElementTree as ET
 
-def extraire_rubriques(fichier_xml="corpus2.xml"):
+def extraire_rubriques(fichier_xml="Corpus/corpusV3.xml"):
     tree = ET.parse(fichier_xml)
     root = tree.getroot()
     rubriques = set()
@@ -19,18 +21,18 @@ def extraire_rubriques(fichier_xml="corpus2.xml"):
 Rubriques = extraire_rubriques()
 
 Stopwords = {
-    "je", "nous", "vous", "tu", "ils", "elles", "on",
+    "je", "nous", "vous", "tu", "ils", "elles", "on", "partir",
     "veux", "voudrais", "souhaite", "souhaiterais", "souhaites", "souhaitons",
-    "cherche", "cherchons", "chercher", "trouver", "trouvez", "trouvons",
+    "cherche", "cherchons", "chercher", "rechercher", "trouver", "trouvez", "trouvons",
     "donner", "donne", "donnez", "afficher", "affiche", "voir", "liste", "lister",
-    "articles", "article", "bulletins", "bulletin",
-    "les", "des", "le", "la", "un", "une", "du", "de", "d'", "l'", "aux", "au", "à", "en", "dans",
+    "articles", "article", "bulletins", "bulletin", "parus", "propos",
+    "les", "des", "le", "la", "un", "une", "du", "de", "d'", "l'", "aux", "au", "à", "en", "dans", "d",
     "par", "sur", "concernant", "portant", "traitant", "parlant", "mentionnant", "évoquant", "impliquant",
     "qui", "que", "dont", "quoi", "où", "avec",
     "sont", "est", "été", "être", "sera", "seront", "ont", "a", "ont été",
-    "et", "ou", "mais", "pas", "soit", "non", "ne", "d", "parus", "paru", "mot",    
+    "et", "ou", "mais", "pas", "soit", "non", "ne",
     "ce", "cet", "cette", "ces", "quel", "quelle", "quels", "quelles", "tout", "tous", "toutes",
-    "contenu", "contenant", "possédant", "provenant", "propos", "écrits", "publiés", "publié", "publiée",
+    "contenu", "contenant", "possédant", "provenant", "écrits", "publiés", "publié", "publiée",
     "mois", "année", "titre", "rubrique", "rubriques", "l", "pour", "sous", "vers", "parler", "parlent"
 }
 

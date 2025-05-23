@@ -1,8 +1,4 @@
-######################################################################################################################################################
-
-############################### Fichier intermédiaire pour faire les substitutions dans la tokenisation déjà effectuée ###############################
-
-######################################################################################################################################################
+                ####### Fichier intermédiaire pour faire les substitutions dans la partie tokenisation #######
 
 def generer_fichier_substitution(fichier_stopwords, fichier_substitution):
     stopwords = set()
@@ -15,6 +11,6 @@ def generer_fichier_substitution(fichier_stopwords, fichier_substitution):
         for stopword in stopwords:
             f.write(f"{stopword}\t''\n")                                        # Remplacer les stopwords par une chaîne vide ("")
 
-fichier_stopwords = "TxtFiles/stopwords2.txt"                                            #"TxtFiles/X4 - stopwords.txt"
-fichier_substitution = "TxtFiles/sub2.txt"                                               #"TxtFiles/X5 - substitution.txt"
+fichier_stopwords = "TxtFiles/stopwords.txt"
+fichier_substitution = "TxtFiles/substitution.txt"
 generer_fichier_substitution(fichier_stopwords, fichier_substitution)

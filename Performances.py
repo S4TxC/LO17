@@ -1,3 +1,5 @@
+                ####### Fichier pour tester les performances du moteur pour un nombre restreint de requêtes #######
+
 import time
 import numpy as np
 import plotly.graph_objects as go
